@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDepartmentLabel" translate="hiphelloApp.department.home.createOrEditLabel">Create or edit a Department</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.department.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.department.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="hiphelloApp.department.deptCode" for="field_deptCode">Dept Code</label>
+            <input type="text" class="form-control" name="deptCode" id="field_deptCode"
+                    ng-model="vm.department.deptCode"
+                    required ng-minlength="2" ng-maxlength="20" />
+            <div ng-show="editForm.deptCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.deptCode.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.deptCode.$error.minlength" translate="entity.validation.minlength" translate-value-min="2">
+                    This field is required to be at least 2 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.deptCode.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="hiphelloApp.department.deptName" for="field_deptName">Dept Name</label>
+            <input type="text" class="form-control" name="deptName" id="field_deptName"
+                    ng-model="vm.department.deptName"
+                    required ng-minlength="3" ng-maxlength="30" />
+            <div ng-show="editForm.deptName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.deptName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.deptName.$error.minlength" translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.deptName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="hiphelloApp.department.company" for="field_company">Company</label>
+            <select class="form-control" id="field_company" name="company" ng-model="vm.department.companyId" ng-options="company.id as company.companyName for company in vm.companies"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

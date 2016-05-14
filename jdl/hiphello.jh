@@ -1,0 +1,31 @@
+entity Employee {
+    firstName String minlength(2) maxlength(40) required
+    lastName String minlength(2) maxlength(40) required
+    active Boolean required
+    startDate LocalDate required
+    title String minlength(8) maxlength(40) required
+
+}
+
+entity Department {
+    deptCode String minlength(2) maxlength(20) required
+    deptName String minlength(3) maxlength(30) required
+}
+
+entity Company {
+    companyName String minlength(5) maxlength(60) required
+}
+
+relationship ManyToOne {
+    Employee {department(deptCode)} to Department
+}
+
+relationship ManyToOne {
+    Department {company(companyName)} to Company
+}
+
+dto all with mapstruct
+
+paginate all with pager
+
+service all with serviceImpl

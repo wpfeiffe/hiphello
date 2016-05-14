@@ -1,0 +1,70 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "department",
+      "otherEntityName": "department",
+      "otherEntityField": "deptCode"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": 2,
+      "fieldValidateRulesMaxlength": 40
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": 2,
+      "fieldValidateRulesMaxlength": 40
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "active",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "startDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": 8,
+      "fieldValidateRulesMaxlength": 40
+    }
+  ],
+  "changelogDate": "20160514141434",
+  "dto": "mapstruct",
+  "pagination": "pager",
+  "service": "serviceImpl",
+  "entityTableName": "employee"
+}

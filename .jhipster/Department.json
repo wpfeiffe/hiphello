@@ -1,0 +1,42 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "company",
+      "otherEntityName": "company",
+      "otherEntityField": "companyName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "deptCode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": 2,
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "deptName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": 3,
+      "fieldValidateRulesMaxlength": 30
+    }
+  ],
+  "changelogDate": "20160514141435",
+  "dto": "mapstruct",
+  "pagination": "pager",
+  "service": "serviceImpl",
+  "entityTableName": "department"
+}

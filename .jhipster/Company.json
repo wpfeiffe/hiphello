@@ -1,0 +1,22 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "companyName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": 5,
+      "fieldValidateRulesMaxlength": 60
+    }
+  ],
+  "changelogDate": "20160514141436",
+  "dto": "mapstruct",
+  "pagination": "pager",
+  "service": "serviceImpl",
+  "entityTableName": "company"
+}

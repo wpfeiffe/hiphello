@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="hiphelloApp.employee.detail.title">Employee</span> {{vm.employee.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="hiphelloApp.employee.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.employee.firstName}}</span>
+        </dd>
+        <dt><span translate="hiphelloApp.employee.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.employee.lastName}}</span>
+        </dd>
+        <dt><span translate="hiphelloApp.employee.active">Active</span></dt>
+        <dd>
+            <span>{{vm.employee.active}}</span>
+        </dd>
+        <dt><span translate="hiphelloApp.employee.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.employee.startDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="hiphelloApp.employee.title">Title</span></dt>
+        <dd>
+            <span>{{vm.employee.title}}</span>
+        </dd>
+        <dt><span translate="hiphelloApp.employee.department">Department</span></dt>
+        <dd>
+            <a ui-sref="department-detail({id:vm.employee.departmentId})">{{vm.employee.departmentDeptCode}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

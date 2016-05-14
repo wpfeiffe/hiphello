@@ -1,0 +1,15 @@
+version: '2'
+services:
+    hiphello-app:
+        image: hiphello
+        external_links:
+            - hiphello-postgresql:postgresql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/hiphello
+        ports:
+            - 8080:8080
+    hiphello-postgresql:
+        extends:
+            file: postgresql.yml
+            service: hiphello-postgresql
