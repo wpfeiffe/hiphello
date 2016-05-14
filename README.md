@@ -1,5 +1,27 @@
 # hiphello
 
+I created this Hello World using JHipster to demonstrate use of jhipster-uml and adding data via liquibase.  
+
+The /jdl directory contains a "hiphello.jh" file which defines the entities and their relationships.  You have 
+to use npm to install jhipster uml:
+
+    npm install -g jhipster-uml 
+    
+and once installed, then run:
+    
+    jhipster-uml jdl/hiphello.jh
+    
+which will generate the entity code from front to back. Note that I already done this and checked in the result, but
+should you want to clone and change it, you will be prompted to overwrite the already generated entity artifacts.
+
+The liquibase changes were made to the /src/main/resources/config/liquibasemaster.xml where I added a changelog 
+indicated by hiphello xml reference in the master.xml. This xml file specifies the load of the companies.csv, 
+departments.csv, and employees.csv data. Examples of dates and booleans may be of interest. 
+
+Standard jhipster boilerplate README.md follows
+
+---
+
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
 ## Development
